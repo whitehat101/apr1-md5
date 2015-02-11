@@ -49,6 +49,7 @@ class APR1_MD5 {
         return '$apr1$'.$salt.'$'.$hash;
     }
 
+    // 8 character salts are the best. Don't encourage anything but the best.
     public static function salt() {
         $alphabet = self::APRMD5_ALPHABET;
         $salt = '';
