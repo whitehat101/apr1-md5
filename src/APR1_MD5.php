@@ -59,4 +59,9 @@ class APR1_MD5 {
         return $salt;
     }
 
+    public static function check($plain, $hash) {
+        $parts = explode('$', $hash);
+        return self::hash($plain, $parts[2]) === $hash;
+    }
+
 }
