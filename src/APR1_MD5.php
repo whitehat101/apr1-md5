@@ -14,7 +14,10 @@ class APR1_MD5 {
     // http://httpd.apache.org/docs/2.2/misc/password_encryptions.html
     // Wikipedia
 
-    public static function hash($mdp, $salt) {
+    public static function hash($mdp, $salt = null) {
+        if (is_null($salt))
+            $salt = self::salt();
+        $salt = substr($salt, 0, 8);
         $max = strlen($mdp);
         $context = $mdp.'$apr1$'.$salt;
         $binary = pack('H32', md5($mdp.$salt.$mdp));
