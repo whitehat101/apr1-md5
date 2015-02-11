@@ -2,7 +2,7 @@
 
 use WhiteHat101\Crypt\APR1_MD5;
 
-class APR1_MD5Test extends PHPUnit_Framework_TestCase {
+class APR1_MD5_HashTest extends PHPUnit_Framework_TestCase {
 
     public function testHash_WhiteHat101() {
         $this->assertEquals(
