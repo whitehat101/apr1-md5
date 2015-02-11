@@ -1,4 +1,5 @@
 # Apache's APR1 MD5 Hashing Algorithm in PHP
+[![Build Status](https://travis-ci.org/whitehat101/apr1-md5.svg)](https://travis-ci.org/whitehat101/apr1-md5)
 
 There is no way that the best way to generate Apache's apr1-md5 password hashes is from a 7-year-old comment on php.net. Only a n00b would trust a crypto algorithm from a non-security website's forum. Sadly, that is how the PHP community has accessed this algorithm, until now.
 
