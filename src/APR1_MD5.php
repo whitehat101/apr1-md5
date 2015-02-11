@@ -21,7 +21,7 @@ class APR1_MD5 {
         for($i=$max; $i>0; $i-=16)
             $context .= substr($binary, 0, min(16, $i));
         for($i=$max; $i>0; $i>>=1)
-            $context .= ($i & 1) ? chr(0) : $mdp{0};
+            $context .= ($i & 1) ? chr(0) : $mdp[0];
         $binary = pack('H32', md5($context));
         for($i=0; $i<1000; $i++) {
             $new = ($i & 1) ? $mdp : $binary;
@@ -35,9 +35,9 @@ class APR1_MD5 {
             $k = $i+6;
             $j = $i+12;
             if($j == 16) $j = 5;
-            $hash = $binary{$i}.$binary{$k}.$binary{$j}.$hash;
+            $hash = $binary[$i].$binary[$k].$binary[$j].$hash;
         }
-        $hash = chr(0).chr(0).$binary{11}.$hash;
+        $hash = chr(0).chr(0).$binary[11].$hash;
         $hash = strtr(
             strrev(substr(base64_encode($hash), 2)),
             self::BASE64_ALPHABET,
